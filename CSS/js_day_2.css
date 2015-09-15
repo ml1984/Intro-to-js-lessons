@@ -1,0 +1,16 @@
+#picNoShow {
+  display:none;
+}
+#picNoShow_c {
+  display:none;
+}
+#picNoShow_d {
+  display:none;
+}
+.clicker {
+  color:red;
+}
+
+.clicker:hover {
+  text-decoration: underline;
+}
