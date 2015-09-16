@@ -14,3 +14,14 @@
 .clicker:hover {
   text-decoration: underline;
 }
+#end_convo {
+  color:red;
+  text-align: center;
+}
+#end_convo:hover {
+  text-decoration: underline;
+}
+
+#story {
+  display: none;
+}
