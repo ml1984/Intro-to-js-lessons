@@ -24,6 +24,9 @@ $(document).ready(function() {
      $("#picShow_d").toggle();
      $("#picNoShow_d").toggle();
    });
+
+// buttons Exercise - showing and hiding content
+
    $("button#choose").click(function(){
      $("ul#user").prepend("<li class='first_line'>Hi Cat</li>");
      $("ul#cat_convo").prepend("<li class='first_line'>Hi human</li>");
@@ -54,24 +57,60 @@ $(document).ready(function() {
       $("li").remove();
      });
    });
+
+
+// MadLibs Exercise showing content in a paragraph
+
+ //   $("#blanks form").submit (function(event){
+ //
+ //     var person1Input = $("input#person1").val();
+ //     var person2Input = $("input#person2").val();
+ //     var animalInput = $("input#animal").val();
+ //     var exclamationInput = $("input#exclamation").val();
+ //     var verbInput = $("input#verb").val();
+ //     var nounInput = $("input#noun").val();
+ //
+ //     $(".person1").text(person1Input);
+ //     $(".person2").text(person2Input);
+ //     $(".animal").text(animalInput);
+ //     $(".exclamation").text(exclamationInput);
+ //     $(".verb").text(verbInput);
+ //     $(".noun").text(nounInput);
+ //
+ //     $("#story").show();
+ // event.preventDefault();
+ //   });
+
    $("#blanks form").submit (function(event){
+     var blanks = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
 
-     var person1Input = $("input#person1").val();
-     var person2Input = $("input#person2").val();
-     var animalInput = $("input#animal").val();
-     var exclamationInput = $("input#exclamation").val();
-     var verbInput = $("input#verb").val();
-     var nounInput = $("input#noun").val();
+     blanks.forEach (function(blank) {
+        var userInput = $("input#"+blank).val();
+        $("."+blank).text(userInput);
+     });
+    $("#story").show();
+    event.preventDefault();
+  });
 
-     $(".person1").text(person1Input);
-     $(".person2").text(person2Input);
-     $(".animal").text(animalInput);
-     $(".exclamation").text(exclamationInput);
-     $(".verb").text(verbInput);
-     $(".noun").text(nounInput);
+  // jQuery("h1").click(function() {
+  //   alert("This is a header.");
+  // });
+  //
+  // jQuery("p").click(function() {
+  //   alert("This is a paragraph.");
+  // });
 
-     $("#story").show();
+  $("body").click(function(event){
+    var elements =["h1","p","h2"];
+    elements.forEach (function(element){
+      var name = $(element);
+      alert("this is a " + element);
+    });
+  });
 
-     event.preventDefault();
-   });
- });
+var friends_name = ["friend_1","friend_2","friend_3"];
+for (var index = 0; index <friends_name.length; index+=1) {
+  alert("hello " + friends_name[index] + "!");
+};
+
+});
